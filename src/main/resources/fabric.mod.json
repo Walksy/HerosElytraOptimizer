@@ -2,31 +2,24 @@
   "schemaVersion": 1,
   "id": "heroselytraoptimizer",
   "version": "${version}",
-  "name": "HerosElytraOptimizer",
-  "description": "Armor Drain for Marlow",
-  "authors": [],
+  "name": "Hero's Elytra Optimizer",
+  "description": "Client-side mod to stop fall flying when removing elytra.",
+  "authors": ["herobane"],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/heroselytraoptimizer/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
       "me.herobane.heroselytraoptimizer.client.HerosElytraOptimizerClient"
-    ],
-    "main": [
-      "me.herobane.heroselytraoptimizer.HerosElytraOptimizer"
     ]
   },
-  "mixins": [
-    "heroselytraoptimizer.mixins.json",
-    {
-      "config": "heroselytraoptimizer.client.mixins.json",
-      "environment": "client"
-    }
-  ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": ">=0.12.0",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
-  }
+    "minecraft": ">=1.21"
+  },
+  "mixins": [
+    "heroselytraoptimizer.mixins.json"
+  ],
+  "accessWidener": "heroselytraoptimizer.accesswidener"
 }
