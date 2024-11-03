@@ -1,11 +1,14 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "me.herobane.heroselytraoptimizer.mixin.client",
+  "package": "me.herobane.heroselytraoptimizer.client.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+    },
+  "mixins": [
+    "PlayerEntityMixin"
+  ]
 }
