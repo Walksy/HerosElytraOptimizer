@@ -12,6 +12,7 @@
     "sources": "https://github.com/herobane/HerosElytraOptimizer"
   },
   "license": "MIT",
+  "icon": "assets/heroselytraoptimizer/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
