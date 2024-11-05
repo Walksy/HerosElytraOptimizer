@@ -2,10 +2,12 @@
   "schemaVersion": 1,
   "id": "heroselytraoptimizer",
   "version": "${version}",
-  "name": "Hero's Elytra Optimizer",
-  "description": "Client-side mod to stop fall flying when removing elytra.",
-  "authors": ["herobane"],
-  "contact": {},
+  "name": "HerosElytraOptimizer",
+  "description": "Client-side mod for elytra optimization.",
+  "authors": ["YourName"],
+  "contact": {
+    "sources": "https://github.com/YourGitHub/HerosElytraOptimizer"
+  },
   "license": "MIT",
   "environment": "client",
   "entrypoints": {
@@ -13,13 +15,16 @@
       "me.herobane.heroselytraoptimizer.client.HerosElytraOptimizerClient"
     ]
   },
-  "depends": {
-    "fabricloader": ">=0.12.0",
-    "fabric": "*",
-    "minecraft": ">=1.21"
-  },
   "mixins": [
-    "heroselytraoptimizer.mixins.json"
+    {
+      "config": "heroselytraoptimizer.client.mixins.json",
+      "environment": "client"
+    }
   ],
-  "accessWidener": "heroselytraoptimizer.accesswidener"
+  "accessWidener": "heroselytraoptimizer.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "fabric": "*",
+    "minecraft": "~1.21"
+  }
 }
