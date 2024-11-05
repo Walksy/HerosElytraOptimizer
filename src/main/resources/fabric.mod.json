@@ -4,9 +4,12 @@
   "version": "${version}",
   "name": "HerosElytraOptimizer",
   "description": "Client-side mod for elytra optimization.",
-  "authors": ["YourName"],
+  "authors": [
+    "HerobaneNair",
+    "HerobaneNair (again)"
+  ],
   "contact": {
-    "sources": "https://github.com/YourGitHub/HerosElytraOptimizer"
+    "sources": "https://github.com/herobane/HerosElytraOptimizer"
   },
   "license": "MIT",
   "environment": "client",
