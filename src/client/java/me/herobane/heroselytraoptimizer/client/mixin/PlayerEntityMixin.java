@@ -26,8 +26,6 @@ public abstract class PlayerEntityMixin {
         EntityPose entityPose;
         if (player.isFallFlying() && isWearingElytra()) {
             entityPose = EntityPose.FALL_FLYING;
-        } else if (player.isFallFlying() && !isWearingElytra()) {
-            entityPose = EntityPose.SWIMMING;
         } else if (player.isSleeping()) {
             entityPose = EntityPose.SLEEPING;
         } else if (player.isSwimming()) {
