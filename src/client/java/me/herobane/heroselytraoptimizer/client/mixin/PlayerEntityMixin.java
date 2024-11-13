@@ -26,6 +26,8 @@ public abstract class PlayerEntityMixin {
         EntityPose entityPose;
         if (player.isFallFlying() && isWearingElytra()) {
             entityPose = EntityPose.FALL_FLYING;
+        } else if (player.isFallFlying() && !isWearingElytra()) {
+            entityPose = EntityPose.SWIMMING;
         } else if (player.isSleeping()) {
             entityPose = EntityPose.SLEEPING;
         } else if (player.isSwimming()) {
@@ -38,7 +40,19 @@ public abstract class PlayerEntityMixin {
             entityPose = EntityPose.STANDING;
         }
 
-        player.setPose(entityPose);
-        ci.cancel();  // idk what this does but I was told it's good practice
+        EntityPose entityPose2;
+        PlayerEntityAccessor accessor = (PlayerEntityAccessor) player;
+        if (!player.isSpectator() && !player.hasVehicle() && !accessor.invokeCanChangeIntoPose(entityPose)) {
+            if (accessor.invokeCanChangeIntoPose(EntityPose.CROUCHING)) {
+                entityPose2 = EntityPose.CROUCHING;
+            } else {
+                entityPose2 = EntityPose.SWIMMING;
+            }
+        } else {
+            entityPose2 = entityPose;
+        }
+
+        player.setPose(entityPose2);
+        ci.cancel(); // Cancels the original updatePose to prevent overwriting
     }
 }
