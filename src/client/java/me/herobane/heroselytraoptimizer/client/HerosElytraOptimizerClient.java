@@ -6,5 +6,6 @@ public class HerosElytraOptimizerClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+
     }
 }

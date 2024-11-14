@@ -3,9 +3,6 @@
   "minVersion": "0.8",
   "package": "me.herobane.heroselytraoptimizer.client.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "PlayerEntityAccessor"
-  ],
   "client": [
     "PlayerEntityMixin"
   ],
